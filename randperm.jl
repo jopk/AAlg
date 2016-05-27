@@ -1,6 +1,6 @@
 #!/bin/julia
 
-function position(i::Int, n::Int)
+function randperm_position(i::Int, n::Int)
 	sum = 0
 	for j = 1:n
 		x = abs(i - j)
@@ -9,11 +9,21 @@ function position(i::Int, n::Int)
 	expected = sum / n
 end
 
-function expected_value(n)
+function randperm_expected_value(n::Int)
 	E = Float64[]
 	for i = 1:n
-		x = position(i, n)
+		x = randperm_position(i, n)
 		push!(E, x)
 	end
-	return E, sum(E)
+	return sum(E)
 end
+
+function randperm(n::Int)
+	E = Float64[]
+	for i = 1:n
+		x = randperm_expected_value(n)
+		push!(E, x)
+	end
+	return E
+end
+

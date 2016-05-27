@@ -1,11 +1,11 @@
 #!/bin/julia
 
-function select_loser(n::Int)
+function loser(n::Int)
 	A = collect(1:n)
-	return select_loser(A, 0)
+	return loser(A, 0)
 end
 
-function select_loser(A::Array{Int}, s::Int)
+function loser(A::Array{Int}, s::Int)
 	if length(A) == 1
 		return A[1], s
 	elseif length(A) == 0
@@ -19,6 +19,6 @@ function select_loser(A::Array{Int}, s::Int)
 			end
 		end
 	end
-	return select_loser(Ap, s+1)
+	return loser(Ap, s+1)
 end
 
