@@ -18,12 +18,4 @@ function randperm_expected_value(n::Int)
 	return sum(E)
 end
 
-function randperm(n::Int)
-	E = Float64[]
-	for i = 1:n
-		x = randperm_expected_value(n)
-		push!(E, x)
-	end
-	return E
-end
-
+randperm(n) = randperm_expected_value(n)

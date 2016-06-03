@@ -2,7 +2,7 @@
 
 function loser(n::Int)
 	A = collect(1:n)
-	return loser(A, 0)
+	return loser(A, 0)[2]
 end
 
 function loser(A::Array{Int}, s::Int)
