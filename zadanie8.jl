@@ -9,7 +9,7 @@ function C(N)
 end
 
 function get_alpha(N,V)
-  V = V/(N*log(2,N))
+  V = V - (N*log(2,N))
   V = V/N
 end
 
